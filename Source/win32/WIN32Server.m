@@ -1247,6 +1247,8 @@ LRESULT CALLBACK windowEnumCallback(HWND hwnd, LPARAM lParam)
       case WM_KILLFOCUS: 
         if (wParam == (int)hwnd)
           return 0;
+      case WM_INITMENUPOPUP:
+        NSLog(@"We have our init menu popup");
         else
           [self decodeWM_KILLFOCUSParams: wParam : lParam : hwnd]; 
         break;
